@@ -1,0 +1,28 @@
+@use '../../../functions' as *;
+
+.container {
+  width: 100%;
+  height: var(--nav-height);
+  position: fixed;
+  z-index: 7;
+}
+
+.links {
+  display: flex;
+  gap: desktop-vw(40px);
+}
+
+.logo {
+  display: flex;
+  aspect-ratio: 95.45/116.83;
+  display: block;
+  @include desktop {
+    height: calc(var(--nav-height) - desktop-vw(15px));
+    width: auto;
+  }
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}

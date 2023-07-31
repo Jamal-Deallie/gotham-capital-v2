@@ -1,0 +1,39 @@
+@import '../../_functions';
+
+.hero {
+  position: relative;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+
+  @include mobile {
+    aspect-ratio: 500/1200;
+  }
+  @include desktop {
+    aspect-ratio: 16/9;
+  }
+}
+
+.copy {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  h1 {
+
+  }
+ 
+}
+
+.inner {
+
+  @include flexbox(
+    $alignItems: center,
+    $justifyContent: center,
+    $direction: column
+  );
+}

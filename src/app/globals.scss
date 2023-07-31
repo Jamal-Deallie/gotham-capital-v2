@@ -1,0 +1,19 @@
+@import '../variables';
+@import '../reset';
+@import '../functions';
+@import '../utilities';
+@import '../font-style';
+@import '../colors';
+@import '../layouts';
+@import '../spacing';
+
+:root  {
+  --nav-height: #{mobile-vw(65px)};
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+  --input-border: #000;
+  @include desktop {
+    --nav-height: #{desktop-vw(90px)};
+  }
+}
