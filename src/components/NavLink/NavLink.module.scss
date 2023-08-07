@@ -8,7 +8,7 @@
   font-size: mobile-vw(15px);
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--tertiary-variant);
+  color: var(--primary-variant);
   letter-spacing: 1.5px;
   @include desktop {
     font-size: desktop-vw(16px);
@@ -24,7 +24,7 @@
     pointer-events: none;
   }
   &:hover {
-    color: var(--primary-variant);
+    color: var(--tertiary-variant);
   }
   &:before {
     content: '';
@@ -64,27 +64,27 @@
 }
 
 .active {
-  color: var(--primary-variant);
+  color: var(--tertiary-variant);
 
   &:after {
     content: '';
     position: absolute;
     width: 100%;
     height: 1px;
-    background: var(--tertiary-variant);
+    background: var(--primary-variant);
     top: 100%;
     left: 0;
     pointer-events: none;
   }
   &:hover {
-    color: var(--tertiary-variant);
+    color: var(--primary-variant);
   }
   &:before {
     content: '';
     position: absolute;
     width: 100%;
     height: 1px;
-    background: var(--tertiary-variant);
+    background: var(--primary-variant);
     top: 100%;
     left: 0;
     pointer-events: none;

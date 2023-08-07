@@ -21,7 +21,7 @@ function LinkComponent({
 
   return (
     <Link href={href} passHref className={styleClasses}>
-      {children}
+      <span>{children}</span>
     </Link>
   );
 }

@@ -1,0 +1,27 @@
+@import '../../_functions';
+
+.intro {
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+  border-top-left-radius: 3vw;
+  border-top-right-radius: 3vw;
+  margin-top: mobile-vw(-24px);
+  @include desktop {
+    margin-top: desktop-vw(-96px);
+  }
+}
+
+.inner {
+  position: relative;
+
+  p {
+    grid-column: 1/-1;
+  }
+
+  @include desktop {
+    p {
+      grid-column: 4/10;
+    }
+  }
+}

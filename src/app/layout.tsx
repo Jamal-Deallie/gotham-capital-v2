@@ -18,10 +18,34 @@ const inter_body = Inter({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  title: 'Gotham Capital',
-  description:
-    'Gotham Capital: Your expert investment partner for tailored strategies, exceptional returns, and a brighter financial future.',
+const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME, SITE_DESCRIPTION } =
+  process.env;
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  : 'http://localhost:3000';
+
+
+export const metadata = {
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: SITE_NAME!,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: {
+    default: SITE_DESCRIPTION!,
+  },
+  robots: {
+    follow: true,
+    index: true,
+  },
+  ...(TWITTER_CREATOR &&
+    TWITTER_SITE && {
+      twitter: {
+        card: 'summary_large_image',
+        creator: TWITTER_CREATOR,
+        site: TWITTER_SITE,
+      },
+    }),
 };
 
 export default function RootLayout({
@@ -30,7 +54,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={`${inter_body.variable} ${inter_heading.variable}`}>
+    <html
+      lang='en'
+      className={`${inter_body.variable} ${inter_heading.variable}`}>
       <body>
         <RouterMounting>
           <Layout>{children}</Layout>

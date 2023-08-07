@@ -7,7 +7,7 @@ import { z } from 'zod';
 import type { FieldError } from 'react-hook-form';
 import { Input } from '@/components/Inputs/Input';
 import { TextArea } from '@/components/Inputs/TextArea';
-import styles from '@/styles/components/ContactForm.module.scss';
+import styles from './ContactForm.module.scss';
 import cn from 'classnames';
 
 const cats = [
@@ -80,72 +80,69 @@ export default function ContactForm() {
   };
 
   return (
-    <div className='grid-inner py-lg-120 py-sm-64'>
-      <div className={cn(styles['form-cont'], 'secondary-bg p-lg-64 p-sm-32')}>
-        <div className={styles['title-cont']}>
-          <h1 className='title-lg primary-clr tac'>
-            Share Your Potential Project
-          </h1>
-        </div>
+    <>
+      <div className={cn(styles['error-cont'], 'mt-lg-16 mt-sm-8')}>
+        {Boolean(Object.keys(errors)?.length) && (
+          <Alert type='error'>There are errors in the form.</Alert>
+        )}
+      </div>
 
-        <div className={cn(styles['error-cont'], 'mt-lg-16 mt-sm-8')}>
-          {Boolean(Object.keys(errors)?.length) && (
-            <Alert type='error'>There are errors in the form.</Alert>
-          )}
-        </div>
-
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
-          className='py-lg-96 py-sm-32'>
-          <div className={styles['flex-cont']}>
-            <div className='mt-sm-8 mt-lg-16'>
-              <Input
-                placeholder='Your Name'
-                classes='mt-lg-8 mt-sm-4'
-                autoComplete='one-time-code'
-                id='firstName_field'
-                type='text'
-                {...register('name')}
-                aria-invalid={Boolean(errors.name)}
-              />
-              <AlertInput>{errors?.name?.message}</AlertInput>
-            </div>
-          </div>
-          <div className={styles['flex-cont']}>
-            <div className='mt-sm-16 mt-lg-24'>
-              <Input
-                placeholder='Company Email'
-                autoComplete='one-time-code'
-                id='email_field'
-                type='email'
-                {...register('email')}
-                aria-invalid={Boolean(errors.email)}
-              />
-              <AlertInput>{errors?.email?.message}</AlertInput>
-            </div>
-          </div>
-          <div className='mt-sm-16 mt-lg-24'>
-            <TextArea
-              placeholder='Tell us about your project'
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <div className={styles['flex-cont']}>
+          <div className='mt-sm-8 mt-lg-16'>
+            <label htmlFor='name' className='primary-clr'>
+              Name
+            </label>
+            <Input
+              classes='mb-lg-24 mt-lg-8 mb-sm-16 mt-sm-8'
               autoComplete='one-time-code'
-              id='message_field'
-              {...register('message')}
-              aria-invalid={Boolean(errors.message)}
+              id='firstName_field'
+              type='text'
+              {...register('name')}
+              aria-invalid={Boolean(errors.name)}
             />
-            <AlertInput>{errors?.message?.message}</AlertInput>
+            <AlertInput>{errors?.name?.message}</AlertInput>
           </div>
-
-          <div className='mt-sm-16 mt-lg-24'>
-            <span className={cn(styles['radio-title'], 'primary-clr')}>
-              How can we help?
-            </span>
+        </div>
+        <div className={styles['flex-cont']}>
+          <div>
+            <label htmlFor='email' className='primary-clr'>
+              Email
+            </label>
+            <Input
+              classes='mt-lg-8 mt-sm-8'
+              autoComplete='one-time-code'
+              id='email_field'
+              type='email'
+              {...register('email')}
+              aria-invalid={Boolean(errors.email)}
+            />
+            <AlertInput>{errors?.email?.message}</AlertInput>
           </div>
-
-          <button type='submit' disabled={isSubmitting || !isValid}>
-            Submit
-          </button>
-          {/* <pre>{JSON.stringify(formatErrors, null, 2)}</pre>
+        </div>
+        <div className='mt-sm-16 mt-lg-24'>
+          <label htmlFor='message' className='primary-clr'>
+            Message
+          </label>
+          <TextArea
+            classes='mt-lg-8 mt-sm-8'
+            autoComplete='one-time-code'
+            id='message_field'
+            rows={10}
+            {...register('message')}
+            aria-invalid={Boolean(errors.message)}
+          />
+          <AlertInput>{errors?.message?.message}</AlertInput>
+        </div>
+        <Button
+          type='submit'
+          disabled={isSubmitting || !isValid}
+          variant='secondary'
+          size='lg'
+          classes='full-w mt-lg-48 mt-sm-32'>
+          Submit
+        </Button>
+        {/* <pre>{JSON.stringify(formatErrors, null, 2)}</pre>
         <pre>{JSON.stringify(watch(), null, 2)}</pre>
         <pre>
           formState ={' '}
@@ -155,8 +152,7 @@ export default function ContactForm() {
             2
           )}
         </pre> */}
-        </form>
-      </div>
-    </div>
+      </form>
+    </>
   );
 }

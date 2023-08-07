@@ -57,7 +57,7 @@ export default function Footer({}: Props) {
               <Logo />
             </div>
             <p className='txt-md mt-lg-8 mt-sm-8'>
-              Lighting Brilliance, Illuminating Spaces
+              Empowering Your Financial Future
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Footer({}: Props) {
             })}
           </div>
           <div className={styles['rights']}>
-            <p className='txt-md'>@2023 Lumos. All Rights Reserved.</p>
+            <p className='txt-md'>@2023 Gotham Capital. All Rights Reserved.</p>
           </div>
 
           <div className={styles['social']}>

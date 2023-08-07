@@ -1,7 +1,6 @@
 @use '../../functions' as *;
 
 .footer {
-  border-top: 2px solid var(--secondary-variant);
   a {
     text-transform: capitalize;
   }
@@ -17,7 +16,7 @@
     grid-column: 1/-1;
   }
   svg {
-    fill: var(--primary-variant);
+    fill: var(--tertiary-variant);
   }
 
   @include mobile {
@@ -98,8 +97,8 @@
     grid-column: 1/-1;
     gap: mobile-vw(24px);
     svg {
-      width: mobile-vw(24px);
-      height: mobile-vw(24px);
+      width: mobile-vw(32px);
+      height: mobile-vw(32px);
     }
   }
 

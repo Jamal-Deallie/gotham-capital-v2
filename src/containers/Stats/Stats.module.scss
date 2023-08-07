@@ -1,0 +1,124 @@
+@import '../../functions';
+
+.inner-wrap {
+  p,
+  h1 {
+    grid-column: 1/-1;
+  }
+
+  @include desktop {
+    p {
+      grid-column: 1/3;
+    }
+    p:nth-of-type(2) {
+      grid-column: 4/-1;
+    }
+  }
+}
+
+.flex-cont {
+  @include flexbox($alignItems: center, $justifyContent: center);
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.stat-one,
+.stat-two {
+  position: relative;
+  width: desktop-vw(775px);
+  height: desktop-vw(775px);
+  @include desktop {
+    width: desktop-vw(775px);
+    height: desktop-vw(775px);
+  }
+}
+
+.stat-one {
+  .stat {
+    @include mobile {
+      margin-top: mobile-vw(-10px);
+    }
+    @include desktop {
+      margin-left: desktop-vw(90px);
+    }
+  }
+}
+
+.stat-two {
+  .stat {
+    @include mobile {
+      margin-top: mobile-vw(-10px);
+    }
+    @include desktop {
+      margin-left: desktop-vw(-90px);
+    }
+  }
+}
+
+.solid-svg {
+  display: inline-block;
+  position: relative;
+  width: desktop-vw(775px);
+  height: desktop-vw(775px);
+
+  svg {
+    display: inline-block;
+  }
+  circle {
+    fill: var(--tertiary-variant);
+  }
+
+  @include desktop {
+    width: desktop-vw(775px);
+    height: desktop-vw(775px);
+    transform: translate(desktop-vw(-90px), 0);
+    svg {
+      width: desktop-vw(775px);
+    }
+  }
+}
+
+.dotted-svg {
+  position: relative;
+  width: desktop-vw(775px);
+  height: desktop-vw(775px);
+  svg {
+    position: absolute;
+    display: inline-block;
+  }
+  svg,
+  circle {
+    width: desktop-vw(775px);
+    height: desktop-vw(775px);
+  }
+  circle {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-dasharray: 0 0 7.8 4.88;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+  }
+
+  @include desktop {
+    width: desktop-vw(775px);
+    height: desktop-vw(775px);
+    transform: translate(desktop-vw(90px), 0);
+    svg,
+    circle {
+      width: desktop-vw(775px);
+      height: desktop-vw(775px);
+    }
+  }
+}
+.stat {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  @include flexbox($alignItems: center, $justifyContent: center);
+  @include desktop {
+    width: desktop-vw(775px);
+    height: desktop-vw(775px);
+  }
+}

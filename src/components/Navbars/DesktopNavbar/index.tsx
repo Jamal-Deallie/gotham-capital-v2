@@ -14,7 +14,7 @@ export default function DesktopNavbar({}: Props) {
 
   return (
     <nav className={cn('secondary-bg hide-mobile', styles['container'])}>
-      <div className={styles['wrap']}>
+      <div className={cn(styles['wrap'], 'px-lg-40')}>
         <div className={styles['logo-wrap']}>
           <Link href='/'>
             <div className={styles['logo']}>
@@ -27,17 +27,18 @@ export default function DesktopNavbar({}: Props) {
           <NavLink href='/about' url='/about'>
             About
           </NavLink>
-
-          <NavLink href='/visit' url='/visit'>
-            Visit
+          <NavLink href='/approach' url='/approach'>
+            Approach
           </NavLink>
-
-          <NavLink href='/faqs' url='/faqs'>
-            Faqs
+          <NavLink href='/team' url='/team'>
+            Team
+          </NavLink>
+          <NavLink href='/contact' url='/contact'>
+            Contact
           </NavLink>
         </div>
-        <LinkButton href='/contact' variant='primary'>
-          contact
+        <LinkButton href='/login' variant='primary' size='md'>
+          Investor Login
         </LinkButton>
       </div>
     </nav>

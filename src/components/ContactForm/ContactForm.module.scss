@@ -1,1 +1,5 @@
-@use '../../functions' as *;
+@import '../../functions';
+
+.form-cont {
+  grid-column: 1/-1;
+}

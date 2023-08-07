@@ -1,16 +1,5 @@
-.of-hidden {
+.hide-overflow {
   overflow: hidden;
-}
-
-.opacity-none {
-  opacity: 0;
-}
-
-.visibility-hidden {
-  visibility: hidden;
-}
-.visibility-visible {
-  visibility: visible;
 }
 
 .hide-desk {
@@ -51,12 +40,23 @@
   }
 }
 
+.full-h {
+  height: calc(100vh - var(--nav-height));
+}
 .center-elem {
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+}
+
+.center-flex {
+  @include flexbox($alignItems: center, $justifyContent: center);
+
+  &.column {
+    flex-direction: column;
+  }
 }
 
 .overlay {

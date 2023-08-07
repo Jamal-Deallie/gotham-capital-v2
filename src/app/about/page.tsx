@@ -1,11 +1,14 @@
-import React from 'react';
-
+import About from '@/containers/About';
+import Stats from '@/containers/Stats';
+import Values from '@/containers/Values';
 type Props = {};
 
 export default function AboutPage({}: Props) {
   return (
     <div>
-      <h1>About</h1>
+      <About />
+      <Stats />
+      <Values />
       {
         //about us
         //values

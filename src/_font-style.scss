@@ -4,7 +4,7 @@ $font-sizes: (
   '11': 76.29px,
   '10': 61.04px,
   '9': 48.83px,
-  '8': 39.06px,
+  '8': 37.06px,
   '7': 31.25px,
   '6': 25px,
   '5': 20px,
@@ -17,8 +17,7 @@ $font-sizes: (
 h1,
 h2 {
   font-family: var(--heading-font), sans-serif;
-  text-transform: capitalize;
-  font-weight: 900;
+  font-weight: 700;
   font-style: normal;
   letter-spacing: -0.03em;
   line-height: calc(2px + 2ex + 2px);
@@ -35,7 +34,10 @@ h5 {
   line-height: 86%;
 }
 
-p {
+p,
+a,
+label,
+span {
   font-family: var(--body-font), sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -44,7 +46,10 @@ p {
 
 .txt-lg {
   letter-spacing: -0.03em;
-  font-size: mobile-vw(map-get($font-sizes, '4'));
+  font-size: desktop-vw(map-get($font-sizes, '7'));
+  & .bold {
+    font-weight: 500;
+  }
   @include desktop {
     font-size: desktop-vw(map-get($font-sizes, '7'));
   }
@@ -52,38 +57,30 @@ p {
 
 .txt-md {
   font-weight: 300;
-  font-size: mobile-vw(map-get($font-sizes, '4'));
+  font-size: mobile-vw(map-get($font-sizes, '5'));
+  & .bold {
+    font-weight: 500;
+  }
   @include desktop {
     font-size: desktop-vw(map-get($font-sizes, '5'));
-  }
-
-  & .bold {
-    font-weight: 700;
   }
 }
 
 .txt {
   font-weight: 300;
   font-size: 16px;
-
-  @include desktop {
-    font-size: 16px;
-  }
-}
-
-.bold {
-  font-weight: 400;
 }
 
 .txt-sm {
   font-weight: 600;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
-  font-size: mobile-vw(14px);
+  font-size: desktop-vw(map-get($font-sizes, '4'));
+  & .bold {
+    font-weight: 500;
+  }
 
   @include desktop {
     font-size: desktop-vw(map-get($font-sizes, '4'));
-    line-height: 114%;
   }
 }
 
@@ -93,29 +90,54 @@ p {
 }
 
 .title-lg {
-  font-size: mobile-vw(41.25px);
-
+  font-family: var(--heading-font), sans-serif;
+  font-size: mobile-vw(37.06px);
+  line-height: 1;
+  text-transform: capitalize;
   @include desktop {
-    font-size: desktop-vw(109px);
+    font-size: desktop-vw(95.37px);
     line-height: 0.86;
+  }
+  &.light {
+    font-weight: 400;
+  }
+
+  &.bold {
+    font-weight: 700;
   }
 }
 .title-md {
-  font-size: mobile-vw(41.25px);
+  font-family: var(--heading-font), sans-serif;
+  font-size: mobile-vw(37.06px);
   line-height: 1;
-  color: var(--tertiary-variant);
-  letter-spacing: 0.015em;
+  letter-spacing: -0.025em;
   @include desktop {
-    font-size: desktop-vw(76.37px);
-    line-height: 0.8;
+    font-size: desktop-vw(61.04px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+  &.light {
+    font-weight: 400;
+  }
+
+  &.bold {
+    font-weight: 700;
   }
 }
 
 .title-sm {
+  font-family: var(--heading-font), sans-serif;
   font-size: mobile-vw(31.25px);
   line-height: 1;
   @include desktop {
-    font-size: desktop-vw(39.06px);
+    font-size: desktop-vw(map-get($font-sizes, '6'));
+  }
+  &.light {
+    font-weight: 400;
+  }
+
+  &.bold {
+    font-weight: 700;
   }
 }
 
@@ -123,11 +145,6 @@ p {
   color: var(--tertiary-variant);
   font-weight: 400;
   grid-column: 1/ -1;
-
-  @include desktop {
-    margin-bottom: desktop-vw(-8px);
-    margin-left: desktop-vw(8px);
-  }
 }
 
 .tac {

@@ -2,12 +2,59 @@
 @use 'sass:map';
 @import './_variables.scss';
 
+@mixin btn($left, $top) {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: $top;
+  left: $left;
+  transition-duration: 0.5s;
+}
 
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 30px;
+  background-color: var(--tertiary-variant);
+}
+
+@mixin icon-before($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: var(--tertiary-variant);
+  content: '';
+  top: $top;
+}
+
+@mixin icon-after($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: var(--tertiary-variant);
+  content: '';
+  top: $top;
+}
+
+@mixin icon-circle($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 2px;
+  border-radius: 100%;
+  background: transparent;
+  border: 4px solid var(--tertiary-variant);
+  left: -15px;
+}
 
 @mixin outline-font($fill, $width) {
   -webkit-text-stroke-width: $width;
   -webkit-text-fill-color: $fill;
-
   @content;
 }
 

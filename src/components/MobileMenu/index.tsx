@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useRef, useState } from 'react';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
 import { gsap } from 'gsap';
 import Link from 'next/link';
@@ -9,7 +9,11 @@ import cn from 'classnames';
 import styles from './Menu.module.scss';
 import useLockedBody from '@/hooks/useLockedBody';
 
-export default function Menus() {
+type Props = {
+  setNavIsOpen: Dispatch<SetStateAction<boolean>>;
+  navIsOpen: boolean;
+};
+export default function Menus({ setNavIsOpen, navIsOpen }: Props) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const root = useRef(null!);
@@ -20,10 +24,9 @@ export default function Menus() {
     setNavIsOpen(!navIsOpen);
   };
 
-  const [navIsOpen, setNavIsOpen] = useState(false);
-
   useIsomorphicLayoutEffect(() => {
     setNavIsOpen(false);
+    setLocked(false);
   }, [pathname, searchParams]);
 
   const tl = useRef<gsap.core.Timeline | null>(null);
@@ -37,12 +40,11 @@ export default function Menus() {
         tl.current
           .fromTo(
             root.current,
-            { autoAlpha: 0, yPercent: 200 },
+            { autoAlpha: 0, yPercent: -200 },
             {
               duration: 1,
               autoAlpha: 1,
               yPercent: 0,
-              display: 'block',
               ease: 'power3.inOut',
             }
           )
@@ -74,19 +76,10 @@ export default function Menus() {
 
   return (
     <>
-      <div className={styles['btn-cont']}>
-        <div
-          role='button'
-          onClick={openShopMenu}
-          className={cn('title-sm btn-item', styles['btn'])}>
-          Menu
-        </div>
-      </div>
-
       <div className={styles.menu} ref={root}>
         <div className='grid-inner'>
-          <div className={styles['link-cont']}>
-            <ul className='lg-py-12 sm-pt-12'>
+          <div className={cn(styles['link-cont'], 'pt-nav-height')}>
+            <ul className='py-sm-64'>
               <li className='link-item'>
                 <Link className={styles['link']} href='/about'>
                   About

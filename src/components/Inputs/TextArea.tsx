@@ -16,13 +16,13 @@ export interface TextAreaProps
   classes?: string;
   autoComplete?: string;
   name?: string;
-  type?: string;
   error?: string;
+  rows?: number;
 }
 
 const TextAreaComponent = forwardRef(
   (
-    { classes, autoComplete, name, error, ...rest }: TextAreaProps,
+    { classes, autoComplete, name, error, rows, ...rest }: TextAreaProps,
     ref: ForwardedRef<HTMLTextAreaElement>
   ) => {
     return (
@@ -31,6 +31,7 @@ const TextAreaComponent = forwardRef(
         autoComplete={autoComplete}
         name={name}
         ref={ref}
+        rows={rows}
         {...rest}
       />
     );

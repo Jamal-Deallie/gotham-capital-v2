@@ -24,7 +24,7 @@ function ButtonComponent({
 
   return (
     <button type={type} className={styleClasses} {...props}>
-      {children}
+      <span>{children}</span>
     </button>
   );
 }

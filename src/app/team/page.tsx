@@ -1,12 +1,12 @@
+import Team from '@/containers/Team';
 export default function TeamPage() {
-    return (
-      <div>
-        <h1>Teams</h1>
-        {
-          //Select Dept
-          //Search Teammate
-        }
-      </div>
-    );
-  }
-  
+  return (
+    <div>
+      <Team />
+      {
+        //Select Dept
+        //Search Teammate
+      }
+    </div>
+  );
+}

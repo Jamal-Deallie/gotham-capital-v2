@@ -8,7 +8,7 @@
 }
 
 .links {
-  display: flex;
+  @include flexbox($alignItems: center);
   gap: desktop-vw(40px);
 }
 
@@ -17,12 +17,12 @@
   aspect-ratio: 95.45/116.83;
   display: block;
   @include desktop {
-    height: calc(var(--nav-height) - desktop-vw(15px));
+    height: calc(var(--nav-height) - desktop-vw(40px));
     width: auto;
   }
 }
 
 .wrap {
-  display: flex;
-  justify-content: space-between;
+  height: 100%;
+  @include flexbox($alignItems: center, $justifyContent: space-between);
 }
