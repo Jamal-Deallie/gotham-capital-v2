@@ -8,6 +8,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import cn from 'classnames';
 import styles from './Menu.module.scss';
 import useLockedBody from '@/hooks/useLockedBody';
+import { mobileLinks } from '@/data';
 
 type Props = {
   setNavIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -50,15 +51,30 @@ export default function Menus({ setNavIsOpen, navIsOpen }: Props) {
           )
           .fromTo(
             links,
-            { autoAlpha: 0, yPercent: 200 },
+            { autoAlpha: 0, yPercent: 200, rotate: '10deg' },
             {
               duration: 0.65,
               yPercent: 0,
+              rotate: '0deg',
               autoAlpha: 1,
+              ease: 'sine.out',
               stagger: {
                 amount: 0.3,
               },
-            }
+            },
+            '-=.10'
+          )
+          .fromTo(
+            '.footer-item',
+            { autoAlpha: 0, yPercent: 200, rotate: '10deg' },
+            {
+              duration: 0.65,
+              yPercent: 0,
+              rotate: '0deg',
+              ease: 'sine.out',
+              autoAlpha: 1,
+            },
+            '<+=1%'
           )
           .reverse();
       }
@@ -76,27 +92,24 @@ export default function Menus({ setNavIsOpen, navIsOpen }: Props) {
 
   return (
     <>
-      <div className={styles.menu} ref={root}>
-        <div className='grid-inner'>
-          <div className={cn(styles['link-cont'], 'pt-nav-height')}>
-            <ul className='py-sm-64'>
-              <li className='link-item'>
-                <Link className={styles['link']} href='/about'>
-                  About
-                </Link>
-              </li>
-
-              <li className='link-item'>
-                <Link className={styles['link']} href='/visit'>
-                  Visit
-                </Link>
-              </li>
-              <li className='link-item'>
-                <Link className={styles['link']} href='/faqs'>
-                  Faqs
-                </Link>
-              </li>
+      <div className={cn(styles['menu'], 'pt-nav-height')} ref={root}>
+        <div className='main-cont'>
+          <div className={cn(styles['link-cont'], 'py-sm-64')}>
+            <ul>
+              {mobileLinks.map(({ id, label, path }) => {
+                return (
+                  <li className='link-item' key={id}>
+                    <Link className={styles['link']} href={path}>
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
+            <div
+              className={cn(styles['footer'], 'py-sm-24 full-w footer-item')}>
+              <p className='tac txt-md bold'>inquiries@gothamcapital.com</p>
+            </div>
           </div>
         </div>
       </div>

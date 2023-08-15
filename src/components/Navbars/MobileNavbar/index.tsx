@@ -9,6 +9,7 @@ import styles from './MobileNavbar.module.scss';
 import cn from 'classnames';
 import useLockedBody from '@/hooks/useLockedBody';
 import Logo from '@/svgs/Logo';
+import Link from 'next/link';
 
 export default function MobileNavbar() {
   gsap.registerPlugin(ScrollTrigger);
@@ -56,14 +57,17 @@ export default function MobileNavbar() {
             <button
               role='button'
               onClick={openShopMenu}
-              className={cn('primary-clr pl-sm-16', styles['btn'])}>
+              className={cn('primary-clr pl-sm-16 txt-md', styles['btn'])}>
               Menu
             </button>
           </div>
-
-          <div className={cn(styles['logo'], 'center-elem')}>
-            <Logo />
-          </div>
+          <Link
+            href='/'
+            aria-label='Gotham Capital Logo. Click to navigate to home page'>
+            <div className={cn(styles['logo'], 'center-elem')}>
+              <Logo />
+            </div>
+          </Link>
           <div className='sm-mr-2'></div>
         </div>
       </nav>

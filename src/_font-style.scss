@@ -34,6 +34,7 @@ h5 {
   line-height: 86%;
 }
 
+li,
 p,
 a,
 label,
@@ -56,9 +57,11 @@ span {
 }
 
 .txt-md {
-  font-weight: 300;
   font-size: mobile-vw(map-get($font-sizes, '5'));
-  & .bold {
+  &.light {
+    font-weight: 300;
+  }
+  &.bold {
     font-weight: 500;
   }
   @include desktop {
@@ -127,10 +130,10 @@ span {
 
 .title-sm {
   font-family: var(--heading-font), sans-serif;
-  font-size: mobile-vw(31.25px);
+  font-size: mobile-vw(map-get($font-sizes, '6'));
   line-height: 1;
   @include desktop {
-    font-size: desktop-vw(map-get($font-sizes, '6'));
+    font-size: desktop-vw(map-get($font-sizes, '8'));
   }
   &.light {
     font-weight: 400;

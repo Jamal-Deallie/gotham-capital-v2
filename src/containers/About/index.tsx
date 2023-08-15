@@ -41,7 +41,7 @@ export default function About() {
           <div className={styles['image']}>
             <Image
               alt='Gotham Capital Boardroom'
-              src='/images/boardroom.jpg'
+              src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1691373690/gotham_capital/boardroom_tl0qpj.webp'
               sizes='(max-width: 849px) 100vw, (max-width: 1200px) 80vw, 70vw'
               fill
             />

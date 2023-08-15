@@ -9,15 +9,7 @@ import { Input } from '@/components/Inputs/Input';
 import { TextArea } from '@/components/Inputs/TextArea';
 import styles from './ContactForm.module.scss';
 import cn from 'classnames';
-
-const cats = [
-  { id: 1, value: 'Architecture', label: 'Architecture' },
-  { id: 2, value: 'Design', label: 'Design' },
-  { id: 3, value: 'Planning', label: 'Planning' },
-  { id: 4, value: 'Renovation', label: 'Renovation' },
-  { id: 5, value: 'Landscaping', label: 'Landscaping' },
-  { id: 6, value: 'Other', label: 'Other' },
-] as const;
+import { useEffect } from 'react';
 
 const formatErrors = (errors: Record<string, FieldError>) =>
   Object.keys(errors).map(key => ({
@@ -69,11 +61,16 @@ export default function ContactForm() {
     handleSubmit,
     watch,
     control,
+    setFocus,
     formState: { errors, isSubmitting, isSubmitted, isDirty, isValid },
   } = useForm<FormType>({
     mode: 'onChange',
     resolver: zodResolver(formSchema),
   });
+
+  useEffect(() => {
+    setFocus('name');
+  }, [setFocus]);
 
   const onSubmit = (values: FormType) => {
     console.log('onSubmit', values);

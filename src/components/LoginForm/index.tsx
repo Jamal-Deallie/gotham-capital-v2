@@ -1,5 +1,5 @@
 'use client';
-
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/Button/Button';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -54,15 +54,16 @@ export default function LoginForm() {
   const {
     register,
     handleSubmit,
+    setFocus,
     formState: { errors, isSubmitting, isSubmitted, isDirty, isValid },
   } = useForm<FormType>({
     mode: 'onChange',
     resolver: zodResolver(formSchema),
   });
 
-  //   const onSubmit = (values: FormType) => {
-  //     console.log('onSubmit', values);
-  //   };
+  useEffect(() => {
+    setFocus('email');
+  }, [setFocus]);
 
   const onSubmit = async (values: FormType) => {
     console.log('onSubmit', values);

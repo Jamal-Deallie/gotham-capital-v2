@@ -12,13 +12,14 @@
 }
 
 .link-cont {
-  grid-column: 1/-1;
-  display: flex;
-  justify-content: center;
+  @include flexbox($justifyContent: center, $direction: column);
+  height: 100vh;
   ul {
+    height: 50vh;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    gap: mobile-vw(32px);
+    gap: mobile-vw(40px);
   }
   li {
     text-align: center;
@@ -26,7 +27,7 @@
 }
 
 .link {
-  font-size: mobile-vw(48.83px);
+  font-size: mobile-vw(50.83px);
   line-height: 1;
   text-transform: uppercase;
   font-family: var(--heading-font), sans-serif;
@@ -36,7 +37,10 @@
   text-align: center;
   transition: color 0.3s cubic-bezier(0.7, 0, 0.2, 1);
   &:hover {
-    color: var(--tertiary-variant);
+    color: var(--primary-variant);
   }
 }
 
+.footer {
+  flex: 0;
+}

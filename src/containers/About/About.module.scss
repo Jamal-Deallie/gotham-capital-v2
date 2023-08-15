@@ -1,14 +1,15 @@
 @use '../../functions' as *;
 
 .title {
-  grid-column: 1/-1;
+  grid-column: 1/10;
 }
 
 .desc {
   grid-column: 1/-1;
 
   @include desktop {
-    column-count: 3;
+    grid-column: 5/-1;
+    column-count: 2;
   }
 }
 
@@ -27,11 +28,6 @@
       height: 100%;
       object-fit: cover;
       object-position: center center;
-    }
-  }
-  @include desktop {
-    @include desktop {
-      grid-column: 4/-1;
     }
   }
 }

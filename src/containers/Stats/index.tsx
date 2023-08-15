@@ -1,46 +1,52 @@
-import React from 'react';
 import styles from './Stats.module.scss';
-import DottedCircle from '@/components/DottedCircle';
 import cn from 'classnames';
+import Counter from '@/components/Counter';
 type Props = {};
 
 export default function Stats({}: Props) {
   return (
     <div className={cn(styles['stats'], 'secondary-bg pt-lg-128')}>
-      <div className={cn(styles['inner-wrap'], 'grid-inner primary-clr')}>
-        <p>Who We Are</p>
-        <p className='txt-lg light'>
-          Lorem ipsum dolor sit amet consectetur
-          <span className='txt-lg bold tertiary-clr'>
-            {' '}
-            adipiscing elit{' '}
-          </span>{' '}
-          sed do eiusmod tempor
-        </p>
+      <div className='heading mb-lg-96 mb-sm-32 primary-clr'>
+        <p>Our Results</p>
+        <h1 className='title-md light'>
+          Gotham relentlessly prioritizes client success,{' '}
+          <span className='tertiary-clr title-md bold'>
+            offering tailored solutions
+          </span>
+          , and unwavering support, with a thriving employee culture, driving
+          excellence, innovation, and shared achievements for lasting client
+          partnerships.
+        </h1>
       </div>
       <div className='main-cont'>
-        <div className='pt-lg-64 pb-lg-128 py-sm-48'>
+        <div className='pb-lg-180 py-sm-48'>
           <div className={styles['flex-cont']}>
             <div className={styles['stat-one']}>
-              <div className={styles['stat']}>
-                <span className='primary-clr'>20</span>
+              <div className={cn(styles['stat'], 'primary-clr')}>
+                <Counter start='0' symbol='%' end={95} />
+                <div>
+                  <h2 className='title-sm'>Client Satisfaction</h2>
+                </div>
               </div>
               <div className={styles['dotted-svg']}>
-                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'>
-                  <circle id='svg' cx='250' cy='250' r='200' />
+                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 550 550'>
+                  <circle id='svg' cx='275' cy='275' r='275' />
                 </svg>
               </div>
             </div>
             <div className={styles['stat-two']}>
-              <div className={styles['stat']}>
-                <span className='primary-clr'>20</span>
+              <div className={cn(styles['stat'], 'primary-clr')}>
+                <Counter start='0' symbol='%' end={90} />
+                <div>
+                  <h2 className='title-sm'>Employee Satisfaction</h2>
+                </div>
               </div>
               <div className={styles['solid-svg']}>
                 <svg
                   version='1.1'
-                  viewBox='0 0 500 500'
+                  viewBox='0 0 550 550'
                   preserveAspectRatio='xMinYMin meet'>
-                  <circle cx='250' cy='250' r='200' />
+                  <circle id='svg' cx='275' cy='275' r='275' />
                 </svg>
               </div>
             </div>

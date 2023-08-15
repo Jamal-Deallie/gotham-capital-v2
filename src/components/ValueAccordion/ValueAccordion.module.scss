@@ -2,20 +2,16 @@
 @import '../../_functions';
 
 .accordion-content {
-  display: grid;
-  transition: grid-template-rows 500ms;
-  margin-bottom: desktop-vww(20px);
+  display: block;
+  padding-bottom: 0%;
+  height: 0;
 }
 
 .content-hide {
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 500ms;
 }
 
 .content-show {
-  grid-template-rows: 1fr;
-  transition: grid-template-rows 500ms;
-  padding-bottom: desktop-vw(128px);
+  // padding-bottom: desktop-vw(128px);
 }
 
 .accordion-content > div {
@@ -54,9 +50,9 @@
   }
 }
 
-.accordion-open {
-  background: var(--tertiary-variant);
-}
+// .accordion-open {
+//   background: var(--tertiary-variant);
+// }
 
 .variant-one {
   background: lighten(#000, 0%);

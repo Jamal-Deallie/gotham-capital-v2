@@ -44,7 +44,7 @@ export default function Footer({}: Props) {
               <p className='txt-md'>Hours: Daily 8am - 5pm EST</p>
             </li>
             <li>
-              <p className='txt-md'>customerservice@lumos.com</p>
+              <p className='txt-md'>customerservice@gothamcapital.com</p>
             </li>
             <li>
               <p className='txt-md'>(123)-123-4567</p>

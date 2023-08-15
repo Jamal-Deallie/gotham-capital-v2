@@ -14,7 +14,7 @@ export default function TeamCard({
       <div className={styles['team-card']}>
         <div className={styles['image']}>
           <Image
-            src='/images/smiling-mature-corporate-executive-wearing-a-shirt-2021-08-26-17-26-48-utc.jpg'
+            src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1691373690/gotham_capital/team_placeholder_cug3g5.webp'
             alt='building'
             fill
             quality={100}

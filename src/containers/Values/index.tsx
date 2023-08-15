@@ -7,31 +7,28 @@ type Props = {};
 export default function Values({}: Props) {
   return (
     <div className={cn(styles['values'], 'primary-bg pt-lg-128 pt-sm-64')}>
-      <div className='grid-inner mb-lg-96 mb-sm-48'>
-        <div className={styles['title']}>
-          <p className='secondary-clr'>Our Values</p>
-        </div>
-        <div className={styles['desc']}>
-          <p className='secondary-clr txt-lg'>
-            Our values drive us to deliver exceptional financial solutions,
-            fostering long-term partnerships based on trust. With a commitment
-            to excellence, we empower clients to achieve their goals, ensuring
-            their financial success is our utmost priority.
-          </p>
-        </div>
+      <div className='heading mb-lg-96 mb-sm-32'>
+        <p>Our Values</p>
+        <h1 className='title-md light'>
+          Our values drive us to deliver exceptional financial solutions, including a
+          commitment to excellence,{' '}
+          <span className='tertiary-clr title-md bold'>we empower clients</span>{' '}
+          to achieve their goals, ensuring their financial success is our utmost
+          priority.
+        </h1>
       </div>
       <div className={styles['accordion-wrap']}>
         <div className={styles['accordion-cont']}>
-          <ValueAccordion variant='one'/>
+          <ValueAccordion variant='one' />
         </div>
         <div className={styles['accordion-cont']}>
-        <ValueAccordion variant='two'/>
+          <ValueAccordion variant='two' />
         </div>
         <div className={styles['accordion-cont']}>
-        <ValueAccordion variant='three'/>
+          <ValueAccordion variant='three' />
         </div>
         <div className={styles['accordion-cont']}>
-        <ValueAccordion variant='four'/>
+          <ValueAccordion variant='four' />
         </div>
       </div>
     </div>

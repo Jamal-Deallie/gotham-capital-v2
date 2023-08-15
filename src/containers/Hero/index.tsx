@@ -12,7 +12,7 @@ export default function Hero() {
           <h1 className='title-lg primary-clr mx-auto tac'>
             Unlocking Your Financial Potential
           </h1>
-          <p className='txt-md primary-clr light mt-lg-16 mt-sm-16 tac'>
+          <p className='txt-md bold primary-clr light mt-lg-16 mt-sm-16 tac'>
             Whether you are an individual seeking to grow your wealth or a
             business aiming to optimize your financial assets, Gotham Capital is
             your trusted ally in realizing your financial aspirations.

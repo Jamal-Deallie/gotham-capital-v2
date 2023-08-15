@@ -1,0 +1,76 @@
+@import '../../_functions';
+
+.client {
+  @include flexbox($alignItems: flex-end);
+  // margin-left: 16px;
+  width: fit-content;
+
+  p {
+    text-transform: uppercase;
+  }
+  .logo {
+    position: relative;
+    @include flexbox($alignItems: flex-end);
+    height: mobile-vw(30px);
+    margin-inline: 16px;
+    .image {
+      position: relative;
+      height: mobile-vw(30px);
+      width: auto;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  @include desktop {
+    .logo {
+      height: desktop-vw(60px);
+      .image {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.stanford {
+  aspect-ratio: 118/179;
+}
+
+.toys {
+  aspect-ratio: 288/94;
+}
+
+.unicef {
+  aspect-ratio: 79/69;
+}
+
+.salvation {
+  aspect-ratio: 201/232;
+}
+
+.mcdonald {
+  aspect-ratio: 153/172;
+}
+
+.wwf {
+  aspect-ratio: 259/290;
+}
+
+.mgh {
+  aspect-ratio: 116/136;
+}
+
+.npr {
+  aspect-ratio: 508/166;
+}
+
+.judes {
+  aspect-ratio: 102/76;
+}
+
+.ymca {
+  aspect-ratio: 181/207;
+}

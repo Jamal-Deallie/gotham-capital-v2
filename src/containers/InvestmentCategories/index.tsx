@@ -9,11 +9,6 @@ export default function index({}: Props) {
   return (
     <div className={cn(styles['intro'], 'secondary-bg primary-clr')}>
       <div className={cn(styles['inner'])}>
-        {/* <div className='grid-inner'>
-          <div className={styles['title']}>
-            <p>We Invest In</p>
-          </div>
-        </div> */}
         <div className='heading mb-lg-96 mb-sm-32'>
           <p>We Invest In</p>
           <h1 className='title-md light'>

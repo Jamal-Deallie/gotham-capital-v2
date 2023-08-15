@@ -27,9 +27,9 @@ function AccordionComponent({ title, content }: AccordionProps) {
         <button
           className={styles['accordion-trigger']}
           onClick={toggleAccordion}>
-          <p className='title-xs'>{title}</p>
+          <h2 className='title-md'>{title}</h2>
           <span
-            className={cn(showAccordion ? styles['rotate'] : null, 'txt-md')}>
+            className={cn(showAccordion ? styles['rotate'] : null, 'txt-lg')}>
             &#x2B;
           </span>
         </button>
@@ -40,7 +40,7 @@ function AccordionComponent({ title, content }: AccordionProps) {
           showAccordion ? styles['content-show'] : styles['content-hide']
         )}>
         <div>
-          <p className='mt-lg-16 mt-sm-16 txt-lg'>{content}</p>
+          <p className='py-lg-24 py-sm-16 txt-lg'>{content}</p>
         </div>
       </div>
     </div>

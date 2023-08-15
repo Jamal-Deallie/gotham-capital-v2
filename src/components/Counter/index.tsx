@@ -4,49 +4,61 @@ import { useRef } from 'react';
 import xss from 'xss';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
 import gsap from 'gsap';
-
-export default function index({
-  Number,
+import cn from 'classnames';
+export default function Counter({
+  start,
+  end,
   classes,
+  symbol,
 }: {
-  Number?: string;
+  end: number;
+  start: string;
   classes?: string;
+  symbol?: string;
 }) {
-  const root = useRef<HTMLSpanElement>(null!);
+  const root = useRef<HTMLDivElement>(null!);
+  const counter = useRef<HTMLSpanElement>(null!);
   const tl = useRef<gsap.core.Timeline>(null!);
 
-  // useIsomorphicLayoutEffect(() => {
-  //   const mm = gsap.matchMedia(root);
+  useIsomorphicLayoutEffect(() => {
+    const mm = gsap.matchMedia(root);
 
-  //   mm.add('(min-width: 800px)', () => {
-  //     tl.current = gsap.timeline({
-  //       scrollTrigger: {
-  //         start: 'center center',
-  //         end: 'bottom bottom',
-  //         trigger: root.current,
-  //       },
-  //     });
+    mm.add('(min-width: 850px)', () => {
+      tl.current = gsap.timeline({
+        scrollTrigger: {
+          start: 'top 80%',
+          end: 'bottom bottom',
+          trigger: root.current,
+        },
+      });
+      gsap.set(root.current, { opacity: 0 });
+      tl.current.to(root.current, { opacity: 1, ease: 'power2.out' }).to(
+        counter.current,
+        {
+          innerText: end,
+          duration: 1,
+          snap: {
+            innerText: 2,
+          },
+        },
+        '<-=20%'
+      );
+    });
 
-  //     tl.current.to(root.current, {
-  //       innerText: 50,
-  //       duration: 3,
-  //       snap: {
-  //         innerText: 5,
-  //       },
-  //     });
-  //   });
-
-  //   return () => {
-  //     mm.revert();
-  //   };
-  // }, []);
+    return () => {
+      mm.revert();
+    };
+  }, []);
 
   return (
-    <span
-      className={classes}
-      ref={root}
-      dangerouslySetInnerHTML={{
-        __html: xss('11'),
-      }}></span>
+    <div ref={root}>
+      <span
+        ref={counter}
+        className={classes}
+        dangerouslySetInnerHTML={{
+          __html: xss(start),
+        }}></span>
+      {symbol ? <span>{symbol}</span> : null}
+    </div>
   );
 }

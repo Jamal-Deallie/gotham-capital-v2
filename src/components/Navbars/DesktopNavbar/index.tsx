@@ -1,6 +1,3 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import NavLink from '@/components/NavLink';
 import Logo from '@/svgs/Logo';
@@ -10,13 +7,13 @@ import { LinkButton } from '@/components/Button';
 type Props = {};
 
 export default function DesktopNavbar({}: Props) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <nav className={cn('secondary-bg hide-mobile', styles['container'])}>
       <div className={cn(styles['wrap'], 'px-lg-40')}>
         <div className={styles['logo-wrap']}>
-          <Link href='/'>
+          <Link
+            href='/'
+            aria-label='Gotham Capital Logo. Click to navigate to home page'>
             <div className={styles['logo']}>
               <Logo />
             </div>

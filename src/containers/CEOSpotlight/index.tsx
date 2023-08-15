@@ -11,24 +11,29 @@ export default function CEOSpotlight({}: Props) {
       <div className='grid-inner'>
         <div className={styles['image']}>
           <Image
-            src='/images/smiling-mature-corporate-executive-wearing-a-shirt-2021-08-26-17-26-48-utc.jpg'
-            alt='building'
+            src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1691373690/gotham_capital/team_placeholder_cug3g5.webp'
+            alt='CEO'
             fill
-            quality={100}
-            sizes='(max-width: 1300px) 75vw, 100vw, (max-width: 800px) 100vw'
-            priority
+            sizes='(max-width: 1300px) 50vw, 33vw, (max-width: 850px) 100vw'
           />
         </div>
-        <aside className='primary-bg p-lg-64 p-sm-32'>
+        <aside className='primary-bg p-lg-64 px-sm-16 py-sm-24'>
           <div>
-            <h1 className='title-md light'>Dummy Name</h1>
+            <h1 className='title-md light'>
+              Driving Gotham's{' '}
+              <span className='tertiary-clr title-md bold'>
+                {' '}
+                Financial Success
+              </span>{' '}
+              With Innovation
+            </h1>
             <p className='mt-lg-128 mt-sm-24'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              The founder and CEO of Gotham Capital, James Maxwell, is a
+              visionary financial strategist. With a distinguished career
+              spanning decades, he has demonstrated a keen ability to identify
+              lucrative opportunities, shape innovative investment approaches,
+              and lead a dedicated team to deliver exceptional results,
+              cementing his legacy as an industry trailblazer.
             </p>
 
             <div className='mt-lg-48 mt-sm-24'>

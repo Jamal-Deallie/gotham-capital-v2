@@ -26,7 +26,7 @@ export default function InsightsPreview({}: Props) {
             <div className={styles['image']}>
               <Image
                 alt='article'
-                src='/images/insights_placeholder.jpg'
+                src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1691373690/gotham_capital/insights_placeholder_vkqbkl.webp'
                 fill
                 sizes='(max-width: 1200px) 50vw, 70vw'
               />
@@ -52,7 +52,7 @@ export default function InsightsPreview({}: Props) {
             <div
               className={cn(
                 styles['cat-cont'],
-                'px-lg-16 py-lg-4 p-sm-4 secondary-bg'
+                'px-lg-16 py-lg-4 p-sm-4 tertiary-bg'
               )}>
               <span className='primary-clr'>Category</span>
             </div>
@@ -62,7 +62,7 @@ export default function InsightsPreview({}: Props) {
             <div className={styles['img-sm']}>
               <Image
                 alt='article'
-                src='/images/insights_placeholder.jpg'
+                src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1691373690/gotham_capital/insights_placeholder_vkqbkl.webp'
                 fill
                 sizes='(max-width: 1200px) 50vw, 70vw'
               />
@@ -77,7 +77,7 @@ export default function InsightsPreview({}: Props) {
             <div className={styles['img-sm']}>
               <Image
                 alt='article'
-                src='/images/insights_placeholder.jpg'
+                src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1691373690/gotham_capital/insights_placeholder_vkqbkl.webp'
                 fill
                 sizes='(max-width: 1200px) 50vw, 70vw'
               />
@@ -92,7 +92,7 @@ export default function InsightsPreview({}: Props) {
             <div className={styles['img-sm']}>
               <Image
                 alt='article'
-                src='/images/insights_placeholder.jpg'
+                src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1691373690/gotham_capital/insights_placeholder_vkqbkl.webp'
                 fill
                 sizes='(max-width: 1200px) 50vw, 70vw'
               />
