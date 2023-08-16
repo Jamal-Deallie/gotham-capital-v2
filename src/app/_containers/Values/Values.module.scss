@@ -1,0 +1,32 @@
+@import '../../_styles/functions';
+
+.values {
+  border-top-left-radius: 3vw;
+  border-top-right-radius: 3vw;
+  overflow: hidden;
+  margin-top: desktop-vw(-48px);
+  @include desktop {
+    margin-top: desktop-vw(-96px);
+  }
+}
+
+.title {
+  grid-column: 1/-1;
+}
+
+.desc {
+  grid-column: 1/-1;
+  @include desktop {
+    grid-column: 5/-1;
+  }
+}
+.accordion-wrap {
+  .accordion-cont:nth-of-type(2),
+  .accordion-cont:nth-of-type(3),
+  .accordion-cont:nth-of-type(4) {
+    margin-top: mobile-vw(-10px);
+    @include desktop {
+      margin-top: desktop-vw(-42px);
+    }
+  }
+}

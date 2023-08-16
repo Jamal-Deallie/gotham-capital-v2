@@ -1,4 +1,4 @@
-import Team from '@/containers/Team';
+import Team from '@/app/_containers/Team';
 export default function TeamPage() {
   return (
     <div>

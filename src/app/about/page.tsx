@@ -1,6 +1,6 @@
-import About from '@/containers/About';
-import Stats from '@/containers/Stats';
-import Values from '@/containers/Values';
+import About from '@/app/_containers/About';
+import Stats from '@/app/_containers/Stats';
+import Values from '@/app/_containers/Values';
 type Props = {};
 
 export default function AboutPage({}: Props) {

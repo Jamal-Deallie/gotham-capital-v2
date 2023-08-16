@@ -1,7 +1,7 @@
 import React from 'react';
-import ApproachIntro from '@/containers/ApproachIntro';
-import Approaches from '@/containers/Approaches';
-import Statistics from '@/containers/Numbers';
+import ApproachIntro from '@/app/_containers/ApproachIntro';
+import Approaches from '@/app/_containers/Approaches';
+import Statistics from '@/app/_containers/Numbers';
 type Props = {};
 
 export default function ApproachPage({}: Props) {

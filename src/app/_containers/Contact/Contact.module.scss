@@ -1,0 +1,65 @@
+@import '../../_styles/functions';
+
+.contact {
+  border-bottom: 2px solid var(--primary-variant);
+}
+
+.title,
+.form-cont {
+  grid-column: 1/-1;
+  position: relative;
+  @include desktop {
+    grid-column: 6/-1;
+    z-index: 2;
+  }
+}
+
+.card {
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  grid-column: 1/-1;
+
+  @include desktop {
+    grid-column: span 6;
+  }
+}
+.svg-cont {
+  grid-column: 1/5;
+  position: absolute;
+  overflow: hidden;
+  margin-top: desktop-vw(-55px);
+  transform: translate(desktop-vw(-325px));
+}
+.dotted-svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  svg {
+    position: absolute;
+    display: block;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  circle {
+    fill: none;
+    stroke: var(--tertiary-variant);
+    stroke-width: 2px;
+    stroke-dasharray: 0 0 7.8 4.88;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+  }
+
+  @include desktop {
+    width: desktop-vw(800px);
+    height: desktop-vw(800px);
+
+    svg,
+    circle {
+      width: desktop-vw(800px);
+      height: desktop-vw(800px);
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import './globals.scss';
 import type { Metadata } from 'next';
-import RouterMounting from '@/components/RouterMounting';
-import Layout from '@/components/Layout';
+import RouterMounting from '@/_components/RouterMounting';
+import Layout from '@/_components/Layout';
 import { Inter } from 'next/font/google';
 
 const inter_heading = Inter({
@@ -23,7 +23,6 @@ const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME, SITE_DESCRIPTION } =
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   : 'http://localhost:3000';
-
 
 export const metadata = {
   metadataBase: new URL(baseUrl),

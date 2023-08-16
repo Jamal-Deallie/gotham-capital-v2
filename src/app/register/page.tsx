@@ -1,13 +1,12 @@
-import { getPageSession } from '@/auth/lucia';
+import { getPageSession } from '@/app/_auth/lucia';
 import { redirect } from 'next/navigation';
 
-import Form from '@/components/Form';
+import Form from '@/_components/Form';
 import Link from 'next/link';
 
-const Page = async () => {
+export default async function Page() {
   const session = await getPageSession();
-//   console.log(session);
-//   if (session) redirect('/');
+  if (session) redirect('/');
   return (
     <>
       <h1>Sign up</h1>
@@ -20,9 +19,7 @@ const Page = async () => {
         <br />
         <input type='submit' />
       </Form>
-      <Link href='/login'>Sign in</Link>
+      <Link href='/register'>Sign in</Link>
     </>
   );
-};
-
-export default Page;
+}

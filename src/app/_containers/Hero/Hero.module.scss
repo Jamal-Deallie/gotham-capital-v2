@@ -1,0 +1,43 @@
+@import '../../_styles/functions';
+
+.hero {
+  position: relative;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+
+  @include mobile {
+    aspect-ratio: 500/1200;
+  }
+  @include desktop {
+    aspect-ratio: 16/9;
+  }
+}
+
+.copy {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.inner {
+  height: 100%;
+  @include flexbox(
+    $alignItems: center,
+    $justifyContent: center,
+    $direction: column
+  );
+
+  @include desktop {
+    h1 {
+      max-width: desktop-vw(900px);
+    }
+    p {
+      max-width: desktop-vw(600px);
+    }
+  }
+}

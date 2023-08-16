@@ -1,0 +1,68 @@
+@use 'sass:color';
+@import '../../_styles/functions';
+
+.accordion-content {
+  display: block;
+  padding-bottom: 0%;
+  height: 0;
+}
+
+.content-hide {
+}
+
+.content-show {
+  // padding-bottom: desktop-vw(128px);
+}
+
+.accordion-content > div {
+  overflow: hidden;
+}
+
+.accordion-panel {
+  overflow: hidden;
+  border-top-left-radius: 3vw;
+  border-top-right-radius: 3vw;
+}
+
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+
+  span {
+    display: block;
+    font-family: var(--heading-font), sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -0.03em;
+  }
+
+  .rotate {
+    transform: rotate(45deg);
+  }
+  @include desktop {
+    span {
+      font-size: desktop-vw(41.25px);
+    }
+  }
+}
+
+// .accordion-open {
+//   background: var(--tertiary-variant);
+// }
+
+.variant-one {
+  background: lighten(#000, 0%);
+}
+.variant-two {
+  background: lighten(#000, 5%);
+}
+.variant-three {
+  background: lighten(#000, 10%);
+}
+.variant-four {
+  background: lighten(#000, 20%);
+}

@@ -1,8 +1,8 @@
-import { auth } from '@/auth/lucia';
+import { auth } from '@/app/_auth/lucia';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import { LuciaError } from 'lucia';
-import clientPromise from '@/lib/mongodb';
+import clientPromise from '@/_lib/mongodb';
 import type { NextRequest } from 'next/server';
 
 export const POST = async (request: NextRequest) => {

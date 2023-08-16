@@ -1,13 +1,15 @@
-import clientPromise from '@/lib/mongodb';
+import clientPromise from '@/_lib/mongodb';
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@/auth/lucia';
+import { auth } from '@/app/_auth/lucia';
 import { cookies } from 'next/headers';
 import { LuciaError } from 'lucia';
 
 export async function POST(req: NextRequest): Promise<Response> {
   const formData = await req.formData();
+
   const username = formData.get('username');
   const password = formData.get('password');
+
   // basic check
   if (
     typeof username !== 'string' ||
@@ -56,7 +58,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     console.log(key);
     const session = await auth.createSession({
       userId: key.userId,
-      attributes: {},
+      attributes: { username: key.providerUserId },
     });
     const authRequest = auth.handleRequest({
       req,

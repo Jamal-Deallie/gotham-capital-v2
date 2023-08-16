@@ -1,0 +1,58 @@
+@import '../../_styles/functions';
+
+.team-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: 1vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.inner {
+  margin-inline: auto;
+}
+
+.image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 1vw;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.team-info {
+  position: absolute;
+  z-index: 3;
+  bottom: 3%;
+  width: 100%;
+  @include flexbox($alignItems: center, $justifyContent: center);
+  p {
+    text-align: center;
+  }
+  div {
+    height: 60px;
+    width: 95%;
+    overflow: hidden;
+    border-radius: 25px;
+    @include flexbox(
+      $alignItems: center,
+      $justifyContent: center,
+      $direction: column
+    );
+  }
+
+  @include desktop {
+    div {
+      height: 55px;
+    }
+  }
+}

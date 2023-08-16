@@ -1,5 +1,5 @@
-import ContactForm from '@/components/ContactForm';
-import Contact from '@/containers/Contact';
+import ContactForm from '@/_components/ContactForm';
+import Contact from '@/app/_containers/Contact';
 type Props = {};
 
 export default function ContactPage({}: Props) {

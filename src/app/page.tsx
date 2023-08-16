@@ -1,9 +1,10 @@
-import Hero from '@/containers/Hero';
-import Intro from '@/containers/Intro';
-import Clients from '@/containers/Clients';
-import CEOSpotlight from '@/containers/CEOSpotlight';
-import InvestmentCategories from '@/containers/InvestmentCategories';
-import InsightsPreview from '@/containers/InsightsPreview';
+import Hero from '@/_containers/Hero';
+import Intro from '@/_containers/Intro';
+import Clients from '@/_containers/Clients';
+import CEOSpotlight from '@/_containers/CEOSpotlight';
+import InvestmentCategories from '@/_containers/InvestmentCategories';
+import InsightsPreview from '@/_containers/InsightsPreview';
+import Contact from '@/_containers/Contact';
 export default function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function Home() {
       <CEOSpotlight />
       <InvestmentCategories />
       <InsightsPreview />
+      <Contact />
     </>
   );
 }

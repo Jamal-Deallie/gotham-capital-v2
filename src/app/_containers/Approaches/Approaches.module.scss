@@ -1,0 +1,19 @@
+@import '../../_styles/functions';
+
+.title {
+  grid-column: 1/-1;
+  @include desktop {
+    grid-column: 1/5;
+  }
+}
+
+.desc {
+  grid-column: 1/-1;
+  @include desktop {
+    grid-column: 5/-1;
+  }
+}
+
+.accordion-cont {
+  grid-column: 1/-1;
+}

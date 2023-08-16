@@ -1,0 +1,77 @@
+@import '../../_styles/functions';
+
+.numbers {
+  border-top-left-radius: 3vw;
+  border-top-right-radius: 3vw;
+  overflow: hidden;
+  margin-top: desktop-vw(-48px);
+  border-bottom: 2px solid var(--primary-variant);
+  @include desktop {
+    margin-top: desktop-vw(-96px);
+  }
+}
+
+.title {
+  grid-column: 1/-1;
+}
+
+.desc {
+  grid-column: 1/-1;
+  @include desktop {
+    grid-column: 5/-1;
+  }
+}
+
+.svg-line {
+  background: #000;
+  grid-column: 1/-1;
+
+  svg {
+    min-width: 100%;
+  }
+}
+
+.stat-cont {
+  @include flexbox(
+    $alignItems: center,
+    $justifyContent: center,
+    $direction: column
+  );
+  grid-column: 1/-1;
+  h2 {
+    color: var(--primary-variant);
+    text-align: center;
+  }
+  span {
+    font-size: desktop-vw(130px);
+    font-family: var(--heading-font);
+    font-weight: 800;
+  }
+  @include desktop {
+    grid-column: span 4;
+  }
+}
+
+.stat {
+  position: relative;
+}
+
+.stat-cont:nth-of-type(2) {
+  @include desktop {
+    grid-column: 9/-1;
+  }
+}
+.stat-cont:nth-of-type(4) {
+  @include desktop {
+    grid-column: 3 / span 3;
+  }
+}
+.stat-cont:nth-of-type(5) {
+  @include desktop {
+    grid-column: 8 / span 3;
+  }
+}
+
+.stat-inner {
+  display: flex;
+}

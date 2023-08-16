@@ -1,0 +1,46 @@
+@import '../../_styles/functions';
+
+.menu {
+  top: 0;
+  left: 0;
+  right: 0;
+  min-width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
+  background: var(--tertiary-variant);
+}
+
+.link-cont {
+  @include flexbox($justifyContent: center, $direction: column);
+  height: 100vh;
+  ul {
+    height: 50vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: mobile-vw(40px);
+  }
+  li {
+    text-align: center;
+  }
+}
+
+.link {
+  font-size: mobile-vw(50.83px);
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: var(--heading-font), sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: color 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+  &:hover {
+    color: var(--primary-variant);
+  }
+}
+
+.footer {
+  flex: 0;
+}

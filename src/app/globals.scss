@@ -1,11 +1,11 @@
-@import '../variables';
-@import '../reset';
-@import '../functions';
-@import '../utilities';
-@import '../font-style';
-@import '../colors';
-@import '../layouts';
-@import '../spacing';
+@import './_styles/variables';
+@import './_styles/reset';
+@import './_styles/functions';
+@import './_styles/utilities';
+@import './_styles/font-style';
+@import './_styles/colors';
+@import './_styles/layouts';
+@import './_styles/spacing';
 
 :root  {
   --nav-height: #{mobile-vw(65px)};

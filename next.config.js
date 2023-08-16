@@ -3,13 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      'localhost',
-      'res.cloudinary.com',
-      'images.unsplash.com',
-      'cdn.pixabay.com',
-      'images.pexel.com',
-    ],
+    domains: ['localhost', 'res.cloudinary.com'],
   },
   webpack(config) {
     config.module.rules.push({

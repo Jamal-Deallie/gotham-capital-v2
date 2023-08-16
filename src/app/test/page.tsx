@@ -1,4 +1,4 @@
-import AccordionWrap from '@/containers/AccordionWrap';
+import AccordionWrap from '@/app/_containers/AccordionWrap';
 
 import React from 'react';
 
