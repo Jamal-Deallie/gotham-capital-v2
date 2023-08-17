@@ -1,12 +1,9 @@
 import TeamCard from '@/_components/TeamCard';
 import SelectWrapper from '@/app/_containers/SelectWrapper';
 import styles from './Team.module.scss';
-import { employees } from '@/app/_data';
 import cn from 'classnames';
 
-type Props = {};
-
-export default function Team({}: Props) {
+export default function Team({ employee }: { employee?: any }) {
   return (
     <div className={cn('py-lg-128 py-sm-64 secondary-bg', styles['team'])}>
       <div className='grid-inner'>
@@ -26,9 +23,28 @@ export default function Team({}: Props) {
       </div>
       <div className='main-cont pt-lg-64 pt-sm-32 secondary-bg'>
         <div className={styles['grid']}>
-          {employees.map(({ id, ...props }) => {
-            return <TeamCard {...props} key={id} />;
-          })}
+          {employee.map(
+            ({
+              _id,
+              department,
+              name,
+              image,
+            }: {
+              _id: string;
+              name: string;
+              department: string;
+              image: string;
+            }) => {
+              return (
+                <TeamCard
+                  key={_id}
+                  department={department}
+                  name={name}
+                  image={image}
+                />
+              );
+            }
+          )}
         </div>
       </div>
     </div>

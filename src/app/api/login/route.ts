@@ -55,7 +55,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     // find user by key
     // and validate password
     const key = await auth.useKey('username', username.toLowerCase(), password);
-    console.log(key);
+   
     const session = await auth.createSession({
       userId: key.userId,
       attributes: { username: key.providerUserId },
@@ -74,7 +74,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       },
     });
   } catch (e) {
-    console.log(e);
+    
     if (
       e instanceof LuciaError &&
       (e.message === 'AUTH_INVALID_KEY_ID' ||

@@ -1,60 +1,42 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Select.module.scss';
 import cn from 'classnames';
+import { usePathname, useRouter } from 'next/navigation';
 
 export type SelectOption = {
   label: string;
   value: string | number;
 };
 
-type MultipleSelectProps = {
-  multiple: true;
-  value: SelectOption[];
-  onChange: (value: SelectOption[]) => void;
-};
-
-type SingleSelectProps = {
-  multiple?: false;
+type SelectProps = {
+  options: SelectOption[];
   value?: SelectOption;
   onChange: (value: SelectOption | undefined) => void;
 };
 
-type SelectProps = {
-  options: SelectOption[];
-} & (SingleSelectProps | MultipleSelectProps);
-
-export function Select({ multiple, value, onChange, options }: SelectProps) {
+export function Select({ value, onChange, options }: SelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   function clearOptions() {
-    multiple ? onChange([]) : onChange(undefined);
+    onChange(undefined);
   }
 
   function selectOption(option: SelectOption) {
-    if (multiple) {
-      if (value.includes(option)) {
-        onChange(value.filter(o => o !== option));
-      } else {
-        onChange([...value, option]);
-      }
-    } else {
-      if (option !== value) onChange(option);
-    }
+    if (option !== value) onChange(option);
   }
 
   function isOptionSelected(option: SelectOption) {
-    return multiple ? value.includes(option) : option === value;
+    option === value;
   }
-  
-//When opened, the first Option will be highlighted
+
   useEffect(() => {
     if (isOpen) setHighlightedIndex(0);
   }, [isOpen]);
 
   useEffect(() => {
-    //set keyboard options to close and navigate the select
     const handler = (e: KeyboardEvent) => {
       if (e.target != containerRef.current) return;
       switch (e.code) {
@@ -98,26 +80,10 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
       //tabs to  element first
       tabIndex={0}
       className={styles['container']}>
-      <span className={styles.value}>
-        {multiple
-          ? value.map(v => (
-              <button
-                key={v.value}
-                onClick={e => {
-                    //allows click event to not alter/toggle state of parent
-                  e.stopPropagation();
-                  selectOption(v);
-                }}
-                className={styles['option-badge']}>
-                {v.label}
-                <span className={styles['remove-btn']}>&times;</span>
-              </button>
-            ))
-          : value?.label}
-      </span>
+      <span className={styles.value}>{value?.label}</span>
       <button
         onClick={e => {
-               //allows click event to not alter/toggle state of parent
+          //allows click event to not alter/toggle state of parent
           e.stopPropagation();
           clearOptions();
         }}
@@ -133,11 +99,13 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
               e.stopPropagation();
               selectOption(option);
               setIsOpen(false);
+              router.push(`/team?search=${option.label}`);
             }}
             onMouseEnter={() => setHighlightedIndex(index)}
             key={option.value}
             className={cn(
               styles['option'],
+              //@ts-ignore
               isOptionSelected(option) ? styles['selected'] : '',
               index === highlightedIndex ? styles['highlighted'] : ''
             )}>

@@ -248,9 +248,9 @@ export const clients = [
 ];
 
 export const options = [
-  { label: 'First', value: 1 },
-  { label: 'Second', value: 2 },
-  { label: 'Third', value: 3 },
-  { label: 'Fourth', value: 4 },
-  { label: 'Fifth', value: 5 },
+  { label: 'Human Capital', value: 1 },
+  { label: 'Sales', value: 2 },
+  { label: 'Operations', value: 3 },
+  { label: 'Information Technology', value: 4 },
+  { label: 'Investment Management', value: 5 },
 ];

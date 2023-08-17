@@ -7,7 +7,7 @@ import type { NextRequest } from 'next/server';
 
 export const POST = async (request: NextRequest) => {
   const formData = await request.formData();
-  console.log(formData);
+
   const username = formData.get('username');
   const password = formData.get('password');
   // basic check
@@ -41,7 +41,7 @@ export const POST = async (request: NextRequest) => {
   }
   try {
     await clientPromise;
-    console.log('hit');
+
     const user = await auth.createUser({
       key: {
         providerId: 'username', // auth method
@@ -53,7 +53,7 @@ export const POST = async (request: NextRequest) => {
       },
     });
 
-    console.log(user);
+
     const session = await auth.createSession({
       userId: user.userId,
       attributes: {},
@@ -70,7 +70,7 @@ export const POST = async (request: NextRequest) => {
       },
     });
   } catch (e) {
-    console.log(e);
+   
     if (e instanceof LuciaError && e.message === 'AUTH_INVALID_PASSWORD') {
       return NextResponse.json(
         {

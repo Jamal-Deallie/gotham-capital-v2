@@ -4,17 +4,19 @@ import cn from 'classnames';
 
 export default function TeamCard({
   name,
-  title,
+  image,
+  department,
 }: {
   name: string;
-  title: string;
+  image: string;
+  department: string;
 }) {
   return (
     <div className={styles['card']}>
       <div className={styles['team-card']}>
         <div className={styles['image']}>
           <Image
-            src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1691373690/gotham_capital/team_placeholder_cug3g5.webp'
+            src={image}
             alt='building'
             fill
             quality={100}
@@ -25,7 +27,7 @@ export default function TeamCard({
         <div className={cn(styles['team-info'], 'mt-lg-8 mt-sm-16 ')}>
           <div className='py-lg-4 txt tertiary-bg'>
             <p className='txt'>{name}</p>
-            <p>{title}</p>
+            <p>{department}</p>
           </div>
         </div>
       </div>

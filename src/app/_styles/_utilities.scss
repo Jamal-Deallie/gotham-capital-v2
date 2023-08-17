@@ -41,7 +41,7 @@
 }
 
 .full-h {
-  height: calc(100vh - var(--nav-height));
+  min-height: calc(100vh - var(--nav-height));
 }
 .center-elem {
   position: absolute;
